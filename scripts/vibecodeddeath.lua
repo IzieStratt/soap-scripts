@@ -38,4 +38,4 @@ local folder = workspace:FindFirstChild("BadAppleBodies")
 if folder then folder:Destroy() end
 
 print(("Killed %d scripts"):format(killed))
---KEEP:Destroy()
+KEEP:Destroy()
