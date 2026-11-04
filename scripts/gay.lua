@@ -1,4 +1,5 @@
-local TextChatService = game:GetService("TextChatService")
+local Players = game:GetService("Players")
 
-local channel = TextChatService:WaitForChild("TextChannels"):WaitForChild("RBXGeneral")
-channel:DisplaySystemMessage("meowmoew")
+for _, player is pairs(Players:GetPlayers()) do
+	if player.Character then
+		for _, part in pairs(player.Character:GetChildren())
