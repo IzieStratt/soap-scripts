@@ -1,5 +1,11 @@
 local Players = game:GetService("Players")
 
-for _, player is pairs(Players:GetPlayers()) do
+for _, player in pairs(Players:GetPlayers()) do
 	if player.Character then
-		for _, part in pairs(player.Character:GetChildren())
+		for _, part in pairs(player.Character:GetChildren()) do
+			if part:IsA("BasePart") then
+					part.BrickColor = BrickColor.new("Bright red")
+			end
+		end
+	end
+end
