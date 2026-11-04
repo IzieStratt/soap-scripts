@@ -1,14 +1,23 @@
 local Players = game:GetService("Players")
+
+local colors = {
+        Color3.fromRGB(255, 0, 0),
+        Color3.fromRGB(255, 127, 0),
+        Color3.fromRGB(255, 255, 0),
+        Color3.fromRGB(0, 255, 0),
+        Color3.fromRGB(0, 255, 255),
+        Color3.fromRGB(0, 0, 255),
+        Color3.fromRGB(255, 0, 255),
+}
+
+local step = 0
+
 while true do
-	for _, player in pairs(Players:GetPlayers()) do
-		if player.Character then
-			local hue = (tick() + player.UserId % 10) % 5 / 5
-			for _, part in pairs(player.Character:GetChildren()) do
-				if part:IsA("BasePart") then
-					part.Color = Color3.fromHSV(hue, hue, hue)
-				end
-			end
-		end
-	end
-	wait(0.1)
+        step += 1
+        for index, part in pairs(workspace:GetDescendants()) do
+                if part:IsA("BasePart") and Players:GetPlayerFromCharacter(part.Parent) then
+                        part.Color = colors[(step + index) % #colors + 1]
+                end
+        end
+        wait(0.05)
 end
