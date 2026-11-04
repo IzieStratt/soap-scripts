@@ -1,1 +1,0 @@
-local players = 2
