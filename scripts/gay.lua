@@ -5,7 +5,7 @@ while true do
 			local hue = (tick() + player.UserId % 10) % 5 / 5
 			for _, part in pairs(player.Character:GetChildren()) do
 				if part:IsA("BasePart") then
-						part.Color = Color3.fromHSV(hue, 1, 1)
+					part.Color = Color3.fromHSV(hue, 1, 1)
 				end
 			end
 		end
